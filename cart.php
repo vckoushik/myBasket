@@ -63,6 +63,7 @@ $cart = $_SESSION['cart'];
 					</tr>
 				<?php 
 					$total = $total + ($cartr['price']*$value['quantity']);
+					
 				} ?>
 					<tr>
 						<td colspan="6" class="actions">
