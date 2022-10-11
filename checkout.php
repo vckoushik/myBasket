@@ -2,6 +2,7 @@
 	ob_start();
 	session_start();
 	require_once 'config/connect.php';
+	require_once 'process-order.php';
 	if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
 		header('location: login.php');
 	}
@@ -30,6 +31,7 @@ if(isset($_POST) & !empty($_POST)){
 		$count = mysqli_num_rows($res);
 		if($count == 1){
 			//update data in usersmeta table
+			$orderid =null;
 			$usql = "UPDATE usersmeta SET country='$country', firstname='$fname', lastname='$lname', address1='$address1', address2='$address2', city='$city', state='$state',  zip='$zip', company='$company', mobile='$phone' WHERE uid=$uid";
 			$ures = mysqli_query($connection, $usql) or die(mysqli_error($connection));
 			if($ures){
@@ -62,13 +64,15 @@ if(isset($_POST) & !empty($_POST)){
 
 						$orditmsql = "INSERT INTO orderitems (pid, orderid, productprice, pquantity) VALUES ('$pid', '$orderid', '$productprice', '$quantity')";
 						$orditmres = mysqli_query($connection, $orditmsql) or die(mysqli_error($connection));
-						//if($orditmres){
-							//echo "Order Item inserted redirect to my account page <br>";
-						//}
+						$orderid = mysqli_insert_id($connection);
 					}
 				}
-				unset($_SESSION['cart']);
-				header("location: my-account.php");
+				// if(isset($_POST['zipcode']) & !empty($_POST['zipcode']))
+				// 	sendmail($_SESSION['customer'], $orderid);
+				header("location:thank-you.php");
+				
+			
+				
 			}
 		}else{
 			//insert data in usersmeta table

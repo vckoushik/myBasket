@@ -22,6 +22,7 @@
 						<div class="mobnav-subarrow"><i class="fa fa-plus"></i></div>
 						<ul>
 							<li><a href="http://localhost/ecomphp/my-account.php">My Orders</a></li>
+							<li><a href="http://localhost/ecomphp/wishlist.php">My WishList</a></li>
 							<li><a href="http://localhost/ecomphp/edit-address.php">Update Address</a></li>
 							<li><a href="http://localhost/ecomphp/logout.php">Logout</a></li>
 						</ul>
