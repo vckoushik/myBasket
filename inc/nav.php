@@ -86,8 +86,8 @@
 						<div class="search-block">
 							<div class="ssc-inner">
 								<form>
-									<input type="text" placeholder="Type Search text here...">
-									<button type="submit"><i class="fa fa-search"></i></button>
+									<input type="text" placeholder="Type Search text here..." name="search_key">
+									<button type="submit" style="margin-top:35px"><i class="fa fa-search"></i></button>
 								</form>
 							</div>
 						</div>
