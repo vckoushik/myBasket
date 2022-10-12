@@ -9,7 +9,7 @@
 include 'inc/header.php'; 
 include 'inc/nav.php'; 
 $uid = $_SESSION['customerid'];
-$cart = $_SESSION['cart'];
+$cart = isset($_SESSION['cart'])?$_SESSION['cart']:null;
 ?>
 	
 	<!-- SHOP CONTENT -->

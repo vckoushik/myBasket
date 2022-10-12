@@ -1,8 +1,9 @@
 <?php
 require_once 'process-order.php';
 session_start();
-printthankyou(1);
-function printthankyou(int $orderid)
+$uemail= $_SESSION['customer'];
+printthankyou($uemail,1);
+function printthankyou(string $uemail,int $orderid)
 {
         $connection = mysqli_connect('localhost', 'root', '', 'ecomphp');
         //$to ='koushiksiva9@gmail.com';
@@ -827,7 +828,7 @@ function printthankyou(int $orderid)
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
-                                                                                            <td class='esd-block-button es-p15t es-p10b' align='center'><span class='es-button-border' style='border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-style: solid; border-color: #2cb543; border-top: 0px solid #2cb543; border-bottom: 0px solid #2cb543;'><a href='http://localhost/ecomphp/my-account.php' class='es-button'  style='font-size: 16px; border-top-width: 10px; border-bottom-width: 10px; border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-color: #d48344;'>View order status</a></span></td>
+                                                                                            <td class='esd-block-button es-p15t es-p10b' align='center'><span class='es-button-border' style='border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-style: solid; border-color: #2cb543; border-top: 0px solid #2cb543; border-bottom: 0px solid #2cb543;'><a href='http://localhost/ecomphp/orders-page.php' class='es-button'  style='font-size: 16px; border-top-width: 10px; border-bottom-width: 10px; border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-color: #d48344;'>View order status</a></span></td>
                                                                                         </tr>
                                                                                     </tbody>
                                                                                 </table>
@@ -1266,9 +1267,9 @@ function printthankyou(int $orderid)
 
 
         echo($message);
-        ob_start();
-        sendmail("abc@gmail.com",1);
-        ob_end_clean();
+        
+        sendmail($uemail,1);
+       
         unset($_SESSION['cart']);
         
         // $message = '<html><body>';

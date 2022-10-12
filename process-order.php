@@ -1290,7 +1290,7 @@ function sendmail(string $email,int $orderid)
         $header = "From:vckoushiksiva@gmail.com \r\n";    
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type: text/html;charset=UTF-8\r\n";
-        //mail ($to,$subject,$message,$header);
+        mail ($to,$subject,$message,$header);
 
 
         

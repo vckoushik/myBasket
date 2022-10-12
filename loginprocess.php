@@ -15,7 +15,7 @@ if(isset($_POST) & !empty($_POST)){
 			$_SESSION['customer'] = $email;
 			$_SESSION['customerid'] = $r['id'];
 			$_SESSION['cart']=[];
-			header("location: index.php");
+			header("location: shop.php");
 		}else{
 			//$fmsg = "Invalid Login Credentials";
 			header("location: login.php?message=1");
