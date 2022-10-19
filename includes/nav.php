@@ -6,7 +6,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
+							<a href="index1.php">
 								<img src="assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -15,7 +15,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="shop.php">Home</a></li>
+								<li><a href="index1.php">Home</a></li>
 								<li><a href="about.php">About</a></li>
 								<li><a href="#">Categories</a>
 									<ul class="sub-menu">
@@ -32,13 +32,13 @@
 								</li>
 								<li><a href="news.html">My Account</a>
 									<ul class="sub-menu">
-										<li><a href="wishlist.php">My WishList</a></li>
+										<li><a href="wishlist-page.php">My WishList</a></li>
 										<li><a href="orders-page.php">My Orders</a></li>
 										<li><a href="logout.php">Logout</a></li>
 									</ul>
 								</li>
 								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
+								<li><a href="shop.php">Shop</a>
 									<ul class="sub-menu">
 										<li><a href="shop.html">Shop</a></li>
 										<li><a href="checkout.html">Check Out</a></li>
@@ -74,7 +74,7 @@
 					<div class="search-bar">
 						<div class="search-bar-tablecell">
 							<h3>Search For:</h3>
-							<form>
+							<form action="shop.php">
 							<input type="text" placeholder="Keywords" name="search_key">
 							<button type="submit">Search <i class="fas fa-search"></i></button>
 							</form>

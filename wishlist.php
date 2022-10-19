@@ -31,7 +31,7 @@ $cart = isset($_SESSION['cart'])?$_SESSION['cart']:null;
 						<th>Price</th>
 						<th>Added On</th>
 						<th>Operations</th>
-					</tr>
+					</tr> 
 				</thead>
 				<tbody>
 

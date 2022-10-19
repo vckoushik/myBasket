@@ -55,7 +55,7 @@ $cart = isset($_SESSION['cart'])?$_SESSION['cart']:null;
                                 $ordres = mysqli_query($connection, $ordsql);
                                 $ordr = mysqli_fetch_assoc($ordres);
 
-                                $orditmsql = "SELECT * FROM orderitems o JOIN products p WHERE o.orderid=3 AND o.pid=p.id";
+                                $orditmsql = "SELECT * FROM orderitems o JOIN products p WHERE o.orderid=$oid AND o.pid=p.id";
                                 $orditmres = mysqli_query($connection, $orditmsql);
                                 while($orditmr = mysqli_fetch_assoc($orditmres)){
                                 ?>

@@ -23,10 +23,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="services.html">Shop</a></li>
-							<li><a href="news.html">News</a></li>
+							<li><a href="index1x.php">Home</a></li>
+							<li><a href="about.php">About</a></li>
+							<li><a href="shop.php">Shop</a></li>
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>

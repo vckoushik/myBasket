@@ -19,10 +19,12 @@ include 'includes/nav.php';
 							echo("<h1>Shop</h1><p>Shop your favourite products.</p>");
 						}
 						else{
-							$csql = "SELECT * FROM category LIMIT 4";
-							$cres = mysqli_query($connection, $catsql);
+							$catid=$_GET['id'];
+							$csql = "SELECT * FROM category WHERE id=$catid";
+							$cres = mysqli_query($connection, $csql);
 							$cr=mysqli_fetch_row($cres);
-							echo("<h1>$cr[1]</h1><p>Shop your favourite products.</p>");
+							
+							echo("<h1>$cr[1]</h1><p>$cr[3]</p>");
 						}
 						?>
 						
@@ -48,7 +50,7 @@ include 'includes/nav.php';
                         <li class='active' data-filter="*"><a style="color: inherit;text-decoration: inherit;" href="shop.php">All</a></li>
 
                     <?php }
-							$catsql = "SELECT * FROM category LIMIT 4";
+							$catsql = "SELECT * FROM category LIMIT 6";
 							$catres = mysqli_query($connection, $catsql);
                             
 							while($catr = mysqli_fetch_assoc($catres)){
@@ -79,12 +81,15 @@ include 'includes/nav.php';
 
 			<div class="row product-lists">
             <?php 
-								$per_page_record = 4; 
+								$rcount =0;
+								$per_page_record = 10; 
 								$page=1;
+								
 								if(isset($_GET['page']) && !empty($_GET['page']))
 								{
 									$page=$_GET['page'];
 								} 
+								
 								$start_from = ($page-1) * $per_page_record; 
 								 
 								$sql = "SELECT * FROM products";
@@ -103,18 +108,30 @@ include 'includes/nav.php';
 								while($r = mysqli_fetch_assoc($res)){
                                 $name=$r['name'];
                                 $name=substr($name,0,30);
+								
+								if($rcount%3==0 && $rcount!=0)
+								{
+									echo "<div class='row product-lists'>";
+								}
+								$rcount+=1;
 							?>
+				
 				<div class="col-lg-4 col-md-6 text-center strawberry">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.php?id=<?php echo $r['id']; ?>"><img src="admin/<?php echo $r['thumb']; ?>" alt=""></a>
+					<div class="single-product-item" >
+						<div class="product-image" >
+							<a  href="single-product.php?id=<?php echo $r['id']; ?>"><img src="admin/<?php echo $r['thumb']; ?>" alt=""></a>
 						</div>
 						<h3><?php echo $name ?></h3>
 						<p class="product-price"><span>Per Kg</span>$ <?php echo $r['price']; ?> </p>
 						<a href="addtocart.php?id=<?php echo $r['id']; ?>" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
-				<?php }?>
+				<?php
+				if($rcount%3==0 && $rcount!=0)
+				{
+					echo "</div> ";
+				}
+				}?>
 			</div>
             
 			<div class="row">
@@ -122,7 +139,7 @@ include 'includes/nav.php';
 					<div class="pagination-wrap">
 						<ul>
                         <?php
-						$page=1;
+						
 						$sql = "SELECT count(*) FROM products";
 						if(isset($_GET['id']) & !empty($_GET['id'])){
 							$id = $_GET['id'];
@@ -144,7 +161,8 @@ include 'includes/nav.php';
 							echo "<li><a href='shop.php?page=".($page-1)."'> <i class='fa fa-angle-left'></i> </a></li>";   
 						} 
 						for ($i=1; $i<=$total_pages; $i++) {   
-							if ($i == $page) {   
+							if ($i == $page) {
+								   
 								$pagLink .= "<li><a class = 'active' href='shop.php?page="  
 																  .$i."'>".$i." </a>/<li>";   
 							}               

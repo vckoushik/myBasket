@@ -9,6 +9,7 @@ if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
 	header('location: login.php');
 }
 $cart = isset($_SESSION['cart'])?$_SESSION['cart']:null;
+
 $uid = $_SESSION['customerid'];
 $form2=false;
 if(isset($_POST) & !empty($_POST)){

@@ -11,11 +11,11 @@ if(isset($_GET['id']) & !empty($_GET['id'])){
 	echo $sql = "DELETE FROM wishlist WHERE id=$id";
 	$res = mysqli_query($connection, $sql);
 	if($res){
-		header('location: wishlist.php');
+		header('location: wishlist-page.php');
 		//echo "redirect to wish list page";
 	}
 }else{
-	header('location: wishlist.php');
+	header('location: wishlist-page.php');
 }
 
 ?>
