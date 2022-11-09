@@ -16,6 +16,7 @@ include 'includes/nav.php';
 						<?php 
 						if(!isset($_GET['id']))
 						{
+							
 							echo("<h1>Shop</h1><p>Shop your favourite products.</p>");
 						}
 						else{

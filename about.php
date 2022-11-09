@@ -14,7 +14,7 @@ if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>We sale fresh fruits</p>
+						<p>We sale fresh groceries</p>
 						<h1>About Us</h1>
 					</div>
 				</div>
@@ -29,7 +29,7 @@ if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
 			<div class="row">
 				<div class="col-lg-7">
 					<div class="featured-text">
-						<h2 class="pb-3">Why <span class="orange-text">Fruitkha</span></h2>
+						<h2 class="pb-3">Why <span class="orange-text">myBasket</span></h2>
 						<div class="row">
 							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
 								<div class="list-box d-flex">
@@ -38,7 +38,7 @@ if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
 									</div>
 									<div class="content">
 										<h3>Home Delivery</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<p>Fast delivers , delivered to your doorstep without any hastle.</p>
 									</div>
 								</div>
 							</div>
@@ -49,7 +49,7 @@ if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
 									</div>
 									<div class="content">
 										<h3>Best Price</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<p>We provide best prices to the customers , customers satisfaction is first priority</p>
 									</div>
 								</div>
 							</div>
@@ -60,7 +60,7 @@ if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
 									</div>
 									<div class="content">
 										<h3>Custom Box</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<p>We offer custom packaging so that the items ordered are delivered safe.</p>
 									</div>
 								</div>
 							</div>
@@ -71,7 +71,7 @@ if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
 									</div>
 									<div class="content">
 										<h3>Quick Refund</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<p>Easy refunds for the products returned or damaged.</p>
 									</div>
 								</div>
 							</div>
@@ -88,7 +88,7 @@ if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
     	<div class="container">
         	<h3>December sale is on! <br> with big <span class="orange-text">Discount...</span></h3>
             <div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
-            <a href="shop.html" class="cart-btn btn-lg">Shop Now</a>
+            <a href="shop.php" class="cart-btn btn-lg">Shop Now</a>
         </div>
     </section>
 	<!-- end shop banner -->
@@ -100,7 +100,7 @@ if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
 						<h3>Our <span class="orange-text">Team</span></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<p>Our team works hard to provide best groceries app.</p>
 					</div>
 				</div>
 			</div>
@@ -138,6 +138,7 @@ if(!isset($_SESSION['customer']) & empty($_SESSION['customer'])){
 						</ul>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>

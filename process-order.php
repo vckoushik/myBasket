@@ -1,4 +1,23 @@
+
 <?php
+
+class MailSpool
+{
+  public static $mails = [];
+
+  public static function addMail($subject, $to, $message)
+  {
+    self::$mails[] = [ 'subject' => $subject, 'to' => $to, 'message' => $message ];
+  }
+
+  public static function send() 
+  {
+    foreach(self::$mails as $mail) {
+      mail($mail['to'], $mail['subject'], $mail['message']);
+    }
+  }
+}
+
 
 function sendmail(string $email,int $orderid)
 {
@@ -15,9 +34,9 @@ function sendmail(string $email,int $orderid)
         $res1 = mysqli_query($connection, $sql);
         $cus = mysqli_fetch_assoc($res1);
         $cust_name = $cus['firstname']." ".$cus['lastname'];
-        $street = $cus['address1'].",".$cus['address2'].$cus['city'].$cus['state'];
-        $loc=$cus['state']." ".$cus['zip']." ".$cus['country'];
-
+        $street = $cus['address1'].",".$cus['address2'].",".$cus['city'];
+        $loc=$cus['state'].",".$cus['zip'].",".$cus['country'];
+        $totquantity = 0;
         $total = 0;
         foreach($cart as $key => $value) {
                 //echo $key . ' : ' . $value['quantity'] .'<br>';
@@ -26,8 +45,10 @@ function sendmail(string $email,int $orderid)
                 $ordr = mysqli_fetch_assoc($ordres);
                 $productprice = $ordr['price'];
                 $quantity = $value['quantity'];
+                $totquantity += $quantity;
                 $total += $quantity*$productprice;
         }
+        
         $message = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
         <html xmlns='http://www.w3.org/1999/xhtml' xmlns:o='urn:schemas-microsoft-com:office:office'>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -825,7 +846,7 @@ function sendmail(string $email,int $orderid)
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
-                                                                                            <td class='esd-block-button es-p15t es-p10b' align='center'><span class='es-button-border' style='border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-style: solid; border-color: #2cb543; border-top: 0px solid #2cb543; border-bottom: 0px solid #2cb543;'><a href='http://localhost/ecomphp/my-account.php' class='es-button' target='_blank' style='font-size: 16px; border-top-width: 10px; border-bottom-width: 10px; border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-color: #d48344;'>View order status</a></span></td>
+                                                                                            <td class='esd-block-button es-p15t es-p10b' align='center'><span  style='border-style: solid solid solid solid;border-color: #d48344 #d48344 #d48344 #d48344;background: #2cb543;border-width: 0px 0px 0px 0px;display: inline-block;border-radius: 0px;width: auto;border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-style: solid; border-color: #2cb543; border-top: 0px solid #2cb543; border-bottom: 0px solid #2cb543;'><a href='http://localhost/ecomphp/orders-page.php' class='es-button'  style='font-size: 16px; border-top-width: 10px; border-bottom-width: 10px; border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-color: #d48344;'>View order status</a></span></td>
                                                                                         </tr>
                                                                                     </tbody>
                                                                                 </table>
@@ -1146,7 +1167,7 @@ function sendmail(string $email,int $orderid)
                                                                                                 <table style='width: 500px;' class='cke_show_border' cellspacing='1' cellpadding='1' border='0' align='right'>
                                                                                                     <tbody>
                                                                                                         <tr>
-                                                                                                            <td style='text-align: right; font-size: 18px; line-height: 150%;'>Subtotal (3 items):</td>
+                                                                                                            <td style='text-align: right; font-size: 18px; line-height: 150%;'>Subtotal ($totquantity items):</td>
                                                                                                             <td style='text-align: right; font-size: 18px; line-height: 150%;'>$ $total</td>
                                                                                                         </tr>
                                                                                                         <tr>
@@ -1200,8 +1221,8 @@ function sendmail(string $email,int $orderid)
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td class='esd-block-text es-p10t es-p5b es-m-txt-c' align='left'>
-                                                                                                <p>Po Box 3453 Colins St.</p>
-                                                                                                <p>Ceduna 4096 Australia</p>
+                                                                                            <p>East Park Avuenue</p>
+                                                                                            <p>Denton Dallas</p>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
@@ -1229,13 +1250,15 @@ function sendmail(string $email,int $orderid)
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td class='esd-block-text es-m-txt-c' align='left'>
-                                                                                                <p>Vector graphics designed by <a target='_blank' href='http://www.freepik.com/'>Freepik</a>.<br></p>
-                                                                                                <p>You are receiving this email because you have visited our site or asked us about regular newsletter<br></p>
+                                                                                            <p>Shop for fresh groceries at resonable rates at  <a target='_blank' href='http://localhost/ecomphp'>myBasket</a>.<br></p>
+                                                                                                <p>You are receiving this email because you have placed an order in our site or asked us about regular newsletter<br></p>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td align='left' class='esd-block-text es-p10t es-m-txt-c'>
-                                                                                                <p style='line-height: 150%; font-size: 12px;'><a target='_blank' href style='line-height: 150%; font-size: 12px;' class='unsubscribe'>Unsubscribe</a> ♦ <a target='_blank' href='https://viewstripo.email' style='font-size: 12px;'>Update Preferences</a> ♦ <a target='_blank' href='https://viewstripo.email' style='font-size: 12px;'>Customer Support</a></p>
+                                                                                            <p style='line-height: 150%; font-size: 12px;'>
+                                                                                            <a target='_blank' href='http://localhost/ecomphp/about.php' style='font-size: 12px;'>Customer Support</a>
+                                                                                            </p>
                                                                                             </td>
                                                                                         </tr>
                                                                                     </tbody>
@@ -1290,14 +1313,20 @@ function sendmail(string $email,int $orderid)
         $header = "From:vckoushiksiva@gmail.com \r\n";    
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type: text/html;charset=UTF-8\r\n";
+        header('Content-type: text/plain', true);
+        session_write_close();
+        fastcgi_finish_request();
+        sleep(5);
         mail ($to,$subject,$message,$header);
+        // MailSpool::addMail($subject, $to, $message);
+        // register_shutdown_function('MailSpool::send');
+        // exit();
 
 
         
         
       
 }
-
 
 
 ?>

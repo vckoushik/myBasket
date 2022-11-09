@@ -109,7 +109,7 @@ if(isset($_POST) & !empty($_POST)){
 						<!-- End Nav Tabs -->
 						<!-- Tab panes -->
 						<div style="height: auto;" class="tab-content tpl-minimal-tabs-cont align-center section-text">
-							<div style="" class="tab-pane fade active in" id="mini-one">
+							<div  class="tab-pane fade active in" id="mini-one">
 								<p>T<?php echo $prodr['description']; ?></p>
 							</div>
 							
@@ -189,6 +189,7 @@ if(isset($_POST) & !empty($_POST)){
 										}else{
 									?>
 									<h4 class="uppercase space20">Add a review</h4>
+									
 									<form id="form" class="review-form" method="post">
 									<?php
 										$usersql = "SELECT u.email, u1.firstname, u1.lastname FROM users u JOIN usersmeta u1 WHERE u.id=u1.uid AND u.id=$uid";

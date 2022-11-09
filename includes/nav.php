@@ -5,18 +5,19 @@
 				<div class="col-lg-12 col-sm-12 text-center">
 					<div class="main-menu-wrap">
 						<!-- logo -->
-						<div class="site-logo">
-							<a href="index1.php">
-								<img src="assets/img/logo.png" alt="">
+						<div class="site-logo" >
+							<a href="index.php">
+								<img style="height: 100px;width:max-content;" src="assets/img/logo1.png" alt="">
 							</a>
+							
 						</div>
 						<!-- logo -->
 
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="index1.php">Home</a></li>
-								<li><a href="about.php">About</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="shop.php">Shop</a>
 								<li><a href="#">Categories</a>
 									<ul class="sub-menu">
 									<?php
@@ -30,17 +31,17 @@
 										?>	
 									</ul>
 								</li>
-								<li><a href="news.html">My Account</a>
+								<li><a href="#">My Account</a>
 									<ul class="sub-menu">
 										<li><a href="wishlist-page.php">My WishList</a></li>
 										<li><a href="orders-page.php">My Orders</a></li>
 										<li><a href="logout.php">Logout</a></li>
 									</ul>
 								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.php">Shop</a>
+								<li><a href="contact.php">Contact</a></li>
+								<li><a href="about.php">About</a></li>
 									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
+										<li><a href="shop.php">Shop</a></li>
 										<li><a href="checkout.html">Check Out</a></li>
 										<li><a href="single-product.html">Single Product</a></li>
 										<li><a href="cart.html">Cart</a></li>

@@ -66,13 +66,13 @@ if(isset($_POST) & !empty($_POST)){
 
 						$orditmsql = "INSERT INTO orderitems (pid, orderid, productprice, pquantity) VALUES ('$pid', '$orderid', '$productprice', '$quantity')";
 						$orditmres = mysqli_query($connection, $orditmsql) or die(mysqli_error($connection));
-						$orderid = mysqli_insert_id($connection);
+						mysqli_insert_id($connection);
 					}
 				}
 				// if(isset($_POST['zipcode']) & !empty($_POST['zipcode']))
 				// 	sendmail($_SESSION['customer'], $orderid);
 				if($payment == "cod")
-					header("location:thank-you.php");
+					header("location:thank-you.php?oid={$orderid}");
 				else{
 					$form2=true;
 				}
