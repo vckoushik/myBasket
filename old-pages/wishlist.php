@@ -9,7 +9,7 @@
 include 'inc/header.php'; 
 include 'inc/nav.php'; 
 $uid = $_SESSION['customerid'];
-$cart = $_SESSION['cart'];
+$cart = isset($_SESSION['cart'])?$_SESSION['cart']:null;
 ?>
 	
 	<!-- SHOP CONTENT -->
@@ -31,7 +31,7 @@ $cart = $_SESSION['cart'];
 						<th>Price</th>
 						<th>Added On</th>
 						<th>Operations</th>
-					</tr>
+					</tr> 
 				</thead>
 				<tbody>
 
