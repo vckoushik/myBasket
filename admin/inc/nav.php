@@ -45,6 +45,7 @@
 						</ul>
 					</li>
 				</ul>
+				
 				<div style="float:right;color:white;padding-top:2rem;font-size:15px;" class="header-xtra s-user">
 					<strong>Hi, <?php echo $_SESSION['email']?></strong>
 				</div>

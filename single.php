@@ -48,13 +48,13 @@ if(isset($_POST) & !empty($_POST)){
 							<div class="gal-wrap">
 								<div id="gal-slider" class="flexslider">
 									<ul class="slides">
-										<li><img src="admin/<?php echo $prodr['thumb']; ?>" class="img-responsive" alt=""/></li>
+										<li><img src="<?php echo $prodr['thumb']; ?>" class="img-responsive" alt=""/></li>
 									</ul>
 								</div>
 								<ul class="gal-nav">
 									<li>
 										<div>
-											<img src="admin/<?php echo $prodr['thumb']; ?>" class="img-responsive" alt=""/>
+											<img src="<?php echo $prodr['thumb']; ?>" class="img-responsive" alt=""/>
 										</div>
 									</li>
 								</ul>
@@ -240,7 +240,7 @@ if(isset($_POST) & !empty($_POST)){
 								<div class="sm-item isotope-item">
 									<div class="product">
 										<div class="product-thumb">
-											<img src="admin/<?php echo $relr['thumb']; ?>" class="img-responsive" alt="">
+											<img src="<?php echo $relr['thumb']; ?>" class="img-responsive" alt="">
 											<div class="product-overlay">
 												<span>
 												<a href="single.php?id=<?php echo $relr['id']; ?>" class="fa fa-link"></a>

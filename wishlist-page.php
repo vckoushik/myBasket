@@ -56,7 +56,7 @@ $cart = isset($_SESSION['cart'])?$_SESSION['cart']:null;
                             
 								<tr class="table-body-row">
                                     <td class="product-remove"><a href="delwishlist.php?id=<?php echo $wishr['id']; ?>"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><a href="single.php?id=<?php echo $wishr['pid']; ?>" ><img src="admin/<?php echo $wishr['thumb']; ?>"  alt=""></a></td>
+									<td class="product-image"><a href="single.php?id=<?php echo $wishr['pid']; ?>" ><img src="<?php echo $wishr['thumb']; ?>"  alt=""></a></td>
 									<td class="product-name"><?php echo substr($wishr['name'], 0 , 30); ?></td>
 									<td class="product-price">$<?php echo $wishr['price']; ?></td>
 									<td class="product-quantity"><?php echo $wishr['timestamp']; ?></td>

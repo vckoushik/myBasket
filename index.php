@@ -135,7 +135,7 @@ require_once 'config/connect.php';
 					
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="admin/<?php echo $r['thumb']; ?>" alt=""></a>
+							<a href="single-product.html"><img src="<?php echo $r['thumb']; ?>" alt=""></a>
 						</div>
 						<h3><?php echo $r['name']; ?></h3>
 						<p class="product-price"> $ <?php echo $r['price']; ?> </p>

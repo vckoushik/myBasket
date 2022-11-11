@@ -48,7 +48,7 @@ require_once 'config/connect.php';
 								<div class="sm-item isotope-item">
 									<div class="product">
 										<div class="product-thumb">
-											<img src="admin/<?php echo $r['thumb']; ?>" class="img-responsive" width="250px" alt="">
+											<img src="<?php echo $r['thumb']; ?>" class="img-responsive" width="250px" alt="">
 											<div class="product-overlay">
 												<span>
 												<a href="single.php?id=<?php echo $r['id']; ?>" class="fa fa-link"></a>

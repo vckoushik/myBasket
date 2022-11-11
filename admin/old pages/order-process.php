@@ -1,48 +1,36 @@
 <?php
+ob_start();
 session_start();
 require_once '../config/connect.php';
 if (!isset($_SESSION['email']) & empty($_SESSION['email'])) {
-  header('location: login.php');
-  //  echo basename(__FILE__)
+	header('location: login.php');
 }
 ?>
+<?php include 'inc/header.php'; ?>
+<?php include 'inc/nav.php'; ?>
 <?php
-if(isset($_POST) & !empty($_POST)){
-		$status = filter_var($_POST['status'], FILTER_SANITIZE_STRING);
-		$message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
-		$id = filter_var($_POST['orderid'], FILTER_SANITIZE_NUMBER_INT);
+if (isset($_POST) & !empty($_POST)) {
+	$status = filter_var($_POST['status'], FILTER_SANITIZE_STRING);
+	$message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+	$id = filter_var($_POST['orderid'], FILTER_SANITIZE_NUMBER_INT);
 
-			echo $ordprcsql = "INSERT INTO ordertracking (orderid, status, message) VALUES ('$id', '$status', '$message')";
-			$ordprcres = mysqli_query($connection, $ordprcsql) or die(mysqli_error($connection));
-			if($ordprcres){
-				$ordupd = "UPDATE orders SET orderstatus='$status' WHERE id=$id";
-				if(mysqli_query($connection, $ordupd)){
-					header('location: orders.php');
-				}
-			}
+	echo $ordprcsql = "INSERT INTO ordertracking (orderid, status, message) VALUES ('$id', '$status', '$message')";
+	$ordprcres = mysqli_query($connection, $ordprcsql) or die(mysqli_error($connection));
+	if ($ordprcres) {
+		$ordupd = "UPDATE orders SET orderstatus='$status' WHERE id=$id";
+		if (mysqli_query($connection, $ordupd)) {
+			header('location: orders.php');
+		}
+	}
 }
 ?>
 
-<?php include 'includes/header.php'; ?>
-  <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
-        <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Order Processing</span>
-      </div>
 
-      <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name"><?php echo $_SESSION['email']?></span>
-       
-      </div>
-    </nav>
-    
-
-      <!--table-->
-      <div class="content-blog">
+<!-- SHOP CONTENT -->
+<section id="content">
+	<div class="content-blog">
 		<div class="page_header text-center">
-			<h1>Admin - Order Processing</h1>
+			<h2>Admin - Order Processing</h2>
 			<!-- <p>Do you want to cancel Order?</p> -->
 		</div>
 		<form method="post">
@@ -119,21 +107,6 @@ if(isset($_POST) & !empty($_POST)){
 			</div>
 		</form>
 	</div>
-      <!-- end of table-->
-  </section>
+</section>
 
-  <script>
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-    sidebarBtn.onclick = function() {
-      sidebar.classList.toggle("active");
-      if (sidebar.classList.contains("active")) {
-        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-      } else
-        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-    }
-  </script>
-
-</body>
-
-</html>
+<?php include 'inc/footer.php' ?>

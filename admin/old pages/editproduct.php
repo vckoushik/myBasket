@@ -59,22 +59,12 @@ if (isset($_POST) & !empty($_POST)) {
 	}
 }
 ?>
-<?php include 'includes/header.php'; ?>
-  <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
-        <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Edit Product</span>
-      </div>
-      <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name"><?php echo $_SESSION['email']?></span>
-      </div>
-    </nav>
-    
-    <div class="home-content">
-      <!--table-->
-      <div class="container">
+<?php include 'inc/header.php'; ?>
+<?php include 'inc/nav.php'; ?>
+
+<section id="content">
+	<div class="content-blog">
+		<div class="container">
 			<?php if (isset($fmsg)) { ?><div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
 			<?php if (isset($smsg)) { ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
 			<?php
@@ -134,22 +124,7 @@ if (isset($_POST) & !empty($_POST)) {
 			</form>
 
 		</div>
-      <!-- end of table-->
-</div>
-  </section>
+	</div>
 
-  <script>
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-    sidebarBtn.onclick = function() {
-      sidebar.classList.toggle("active");
-      if (sidebar.classList.contains("active")) {
-        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-      } else
-        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-    }
-  </script>
-
-</body>
-
-</html>
+</section>
+<?php include 'inc/footer.php' ?>

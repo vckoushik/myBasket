@@ -83,7 +83,7 @@ include 'includes/nav.php';
 			<div class="row product-lists">
             <?php 
 								$rcount =0;
-								$per_page_record = 10; 
+								$per_page_record = 30 ; 
 								$page=1;
 								
 								if(isset($_GET['page']) && !empty($_GET['page']))
@@ -120,7 +120,7 @@ include 'includes/nav.php';
 				<div class="col-lg-4 col-md-6 text-center strawberry">
 					<div class="single-product-item" >
 						<div class="product-image" >
-							<a  href="single-product.php?id=<?php echo $r['id']; ?>"><img src="admin/<?php echo $r['thumb']; ?>" alt=""></a>
+							<a  href="single-product.php?id=<?php echo $r['id']; ?>"><img src="<?php echo $r['thumb']; ?>" alt=""></a>
 						</div>
 						<h3><?php echo $name ?></h3>
 						<p class="product-price"><span>Per Kg</span>$ <?php echo $r['price']; ?> </p>
@@ -163,13 +163,26 @@ include 'includes/nav.php';
 						} 
 						for ($i=1; $i<=$total_pages; $i++) {   
 							if ($i == $page) {
-								   
-								$pagLink .= "<li><a class = 'active' href='shop.php?page="  
-																  .$i."'>".$i." </a>/<li>";   
+								if(isset($_GET['id']) & !empty($_GET['id']))
+								{
+									$catid=$_GET['id'];
+									$pageparam = $i."&id=".$catid;
+									
+									$pagLink .= "<li><a class = 'active' href='shop.php?page=$pageparam'>".$i." </a>/<li>";   
+								}
+								else
+									$pagLink .= "<li><a class = 'active' href='shop.php?page=".$i."'>".$i." </a>/<li>";   
 							}               
-							else  {   
-								$pagLink .= "<li><a href='shop.php?page=".$i."'>   
-																  ".$i." </a></li>";     
+							else  {  
+								if(isset($_GET['id']) & !empty($_GET['id']))
+								{
+									$catid=$_GET['id'];
+									$pageparam = $i."&id=".$catid;
+									
+									$pagLink .= "<li><a  href='shop.php?page=$pageparam'>".$i." </a>/<li>";   
+								}
+								else 
+									$pagLink .= "<li><a href='shop.php?page=".$i."'>".$i." </a></li>";     
 							}   
 						  };     
 						  echo $pagLink;

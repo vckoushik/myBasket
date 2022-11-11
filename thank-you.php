@@ -1036,7 +1036,7 @@ function printthankyou(string $uemail,int $orderid)
                                                                                 <table width='100%' cellspacing='0' cellpadding='0'>
                                                                                     <tbody>
                                                                                         <tr>
-                                                                                            <td class='esd-block-image' align='center' style='font-size:0'><a href='' target='_blank'><img src='admin/$thumb' alt='$productname' class='adapt-img' title='Natural Balance L.I.D., sale 30%' width='125'></a></td>
+                                                                                            <td class='esd-block-image' align='center' style='font-size:0'><a href='' target='_blank'><img src='$thumb' alt='$productname' class='adapt-img' title='Natural Balance L.I.D., sale 30%' width='125'></a></td>
                                                                                         </tr>
                                                                                     </tbody>
                                                                                 </table>
