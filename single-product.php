@@ -266,7 +266,7 @@ $uid = $_SESSION['customerid'];
 		<div class="row">
 			<div class="col-md-5">
 				<div class="single-product-img">
-					<img src="admin/<?php echo $prodr['thumb']; ?>" alt="">
+					<img src="<?php echo $prodr['thumb']; ?>" alt="">
 				</div>
 			</div>
 			<div class="col-md-7">
@@ -488,7 +488,7 @@ $uid = $_SESSION['customerid'];
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.php?id=<?php echo $relr['id']; ?>"><img src="admin/<?php echo $relr['thumb']; ?>" alt=""></a>
+							<a href="single-product.php?id=<?php echo $relr['id']; ?>"><img src="<?php echo $relr['thumb']; ?>" alt=""></a>
 						</div>
 						<h3><?php echo $name ?></h3>
 						<p class="product-price">$ <?php echo $relr['price']; ?> </p>

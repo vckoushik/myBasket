@@ -1,20 +1,50 @@
 <?php
-	session_start();
-	require_once '../config/connect.php';
-	if(!isset($_SESSION['email']) & empty($_SESSION['email'])){
-		header('location: login.php');
-	}
+session_start();
+require_once '../config/connect.php';
+if (!isset($_SESSION['email']) & empty($_SESSION['email'])) {
+  header('location: login.php');
+  //  echo basename(__FILE__)
+}
 ?>
-<?php include 'inc/header.php'; ?>
-<?php include 'inc/nav.php'; ?>
-	
-<section id="content">
-	<div class="content-blog">
-	<div class="page_header text-center">
-			<h1>Customer Reviews</h1>
-		</div>
-		<div class="clearfix space70"></div>
-		<div class="container">
+<?php include 'includes/header.php'; ?>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Reviews</span>
+      </div>
+      <div class="profile-details">
+        <!--<img src="images/profile.jpg" alt="">-->
+        <span class="admin_name"><?php echo $_SESSION['email']?></span>
+       
+      </div>
+    </nav>
+    <?php
+    //$ordCountSql = "SELECT  FROM orders";
+
+
+    $cuSql = "SELECT count(r.id) as c FROM reviews r JOIN products p WHERE r.pid=p.id";
+    $cures = mysqli_query($connection, $cuSql);
+    $cus = mysqli_fetch_assoc($cures);
+
+
+    ?>
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Reviews</div>
+            <div class="number"><?php echo $cus['c'] ?></div>
+            <div class="indicator">
+              <span class="text"></span>
+            </div>
+          </div>
+          <i class='bx bxs-message cart four'></i>
+        </div>
+      </div>
+
+      <!--table-->
+      <div class="container">
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -41,7 +71,21 @@
 			</table>
 			
 		</div>
-	</div>
+      <!-- end of table-->
+  </section>
 
-</section>
-<?php include 'inc/footer.php' ?>
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function() {
+      sidebar.classList.toggle("active");
+      if (sidebar.classList.contains("active")) {
+        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else
+        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+  </script>
+
+</body>
+
+</html>

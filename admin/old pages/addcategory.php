@@ -52,44 +52,14 @@
 		}
 	}
 ?>
-<?php include 'includes/header.php'; ?>
-<section class="home-section">
-    <nav>
-      <div class="sidebar-button">
-        <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Add Category</span>
-      </div>
-      
-      <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name"><?php echo $_SESSION['email']?></span>
-       
-      </div>
-    </nav>
-    <?php
-    //$ordCountSql = "SELECT  FROM orders";
-    $ordSql = "SELECT COUNT(*) as c , SUM(totalprice) as tot FROM orders";
-    $ores = mysqli_query($connection, $ordSql);
-    $ord = mysqli_fetch_assoc($ores);
-
-    $prodSql = "SELECT COUNT(*) as c FROM products";
-    $pres = mysqli_query($connection, $prodSql);
-    $prd = mysqli_fetch_assoc($pres);
-
-    $cuSql = "SELECT COUNT(*) as c FROM users";
-    $cures = mysqli_query($connection, $cuSql);
-    $cus = mysqli_fetch_assoc($cures);
-
-
-    ?>
-    <div class="home-content">
-      
-    <div class="page_header text-center">
-			<h1>Add a new Category</h1>
-		</div>
-
-      <!--table-->
-      <div class="container">
+<?php include 'inc/header.php'; ?> 
+<?php include 'inc/nav.php'; ?>
+	
+<section id="content">
+	<div class="content-blog">
+		<div><h1><strong>Add a new category</strong></h1></div>
+		<div class="clearfix space70"></div>
+		<div class="container">
 		<?php if(isset($fmsg)){ ?><div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
 		<?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
 			<!-- <form method="post">
@@ -120,21 +90,7 @@
 			</form>
 			
 		</div>
-      <!-- end of table-->
-  </section>
+	</div>
 
-  <script>
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-    sidebarBtn.onclick = function() {
-      sidebar.classList.toggle("active");
-      if (sidebar.classList.contains("active")) {
-        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-      } else
-        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-    }
-  </script>
-
-</body>
-
-</html>
+</section>
+<?php include 'inc/footer.php' ?>

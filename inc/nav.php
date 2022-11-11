@@ -61,7 +61,7 @@
 								
 							 ?>
 							<div class="ci-item">
-								<img src="admin/<?php echo $navcartr['thumb']; ?>" width="70" alt=""/>
+								<img src="<?php echo $navcartr['thumb']; ?>" width="70" alt=""/>
 								<div class="ci-item-info">
 									<h5><a href="single.php?id=<?php echo $navcartr['id']; ?>"><?php echo substr($navcartr['name'], 0 , 20); ?></a></h5>
 									<p><?php echo $value['quantity']; ?> x INR <?php echo $navcartr['price']; ?>.00/-</p>
@@ -82,7 +82,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="s-search">
+					<div class="s-search" style="color:white">
 						<div class="ss-ico"><i class="fa fa-search"></i></div>
 						<div class="search-block">
 							<div class="ssc-inner">

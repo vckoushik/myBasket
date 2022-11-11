@@ -61,7 +61,7 @@ $cart = isset($_SESSION['cart'])?$_SESSION['cart']:null;
                                 ?>
 								<tr class="table-body-row">
 									
-									<td class="product-image"><a href="single-product.php?id=<?php echo $orditmr['pid']; ?>" ><img src="admin/<?php echo $orditmr['thumb']; ?>"  alt=""></a></td>
+									<td class="product-image"><a href="single-product.php?id=<?php echo $orditmr['pid']; ?>" ><img src="<?php echo $orditmr['thumb']; ?>"  alt=""></a></td>
 									<td class="product-name"><?php echo substr($orditmr['name'], 0 , 30); ?></td>
 									<td class="product-price">$<?php echo $orditmr['productprice']; ?></td>
 									<td class="product-quantity"><input type="number" placeholder="0" value="<?php echo $orditmr['pquantity']; ?>"></td>
