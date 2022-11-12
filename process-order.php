@@ -21,7 +21,8 @@ class MailSpool
 
 function sendmail(string $email,int $orderid)
 {
-        $connection = mysqli_connect('localhost', 'root', '', 'ecomphp');
+        require_once 'config/connect.php'; 
+        //$connection = mysqli_connect('localhost', 'root', '', 'ecomphp');
         $to ='koushiksiva9@gmail.com';
         $t=time();
         $current_date = date('Y-m-d',$t);
@@ -846,7 +847,7 @@ function sendmail(string $email,int $orderid)
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
-                                                                                            <td class='esd-block-button es-p15t es-p10b' align='center'><span  style='border-style: solid solid solid solid;border-color: #d48344 #d48344 #d48344 #d48344;background: #2cb543;border-width: 0px 0px 0px 0px;display: inline-block;border-radius: 0px;width: auto;border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-style: solid; border-color: #2cb543; border-top: 0px solid #2cb543; border-bottom: 0px solid #2cb543;'><a href='http://localhost/ecomphp/orders-page.php' class='es-button'  style='font-size: 16px; border-top-width: 10px; border-bottom-width: 10px; border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-color: #d48344;'>View order status</a></span></td>
+                                                                                            <td class='esd-block-button es-p15t es-p10b' align='center'><span  style='border-style: solid solid solid solid;border-color: #d48344 #d48344 #d48344 #d48344;background: #2cb543;border-width: 0px 0px 0px 0px;display: inline-block;border-radius: 0px;width: auto;border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-style: solid; border-color: #2cb543; border-top: 0px solid #2cb543; border-bottom: 0px solid #2cb543;'><a href='http://mybasketdev.herokuapp.com/orders-page.php' class='es-button'  style='font-size: 16px; border-top-width: 10px; border-bottom-width: 10px; border-radius: 5px; background: #d48344 none repeat scroll 0% 0%; border-color: #d48344;'>View order status</a></span></td>
                                                                                         </tr>
                                                                                     </tbody>
                                                                                 </table>
@@ -1250,14 +1251,14 @@ function sendmail(string $email,int $orderid)
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td class='esd-block-text es-m-txt-c' align='left'>
-                                                                                            <p>Shop for fresh groceries at resonable rates at  <a target='_blank' href='http://localhost/ecomphp'>myBasket</a>.<br></p>
+                                                                                            <p>Shop for fresh groceries at resonable rates at  <a target='_blank' href='http://mybasketdev.herokuapp.com'>myBasket</a>.<br></p>
                                                                                                 <p>You are receiving this email because you have placed an order in our site or asked us about regular newsletter<br></p>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td align='left' class='esd-block-text es-p10t es-m-txt-c'>
                                                                                             <p style='line-height: 150%; font-size: 12px;'>
-                                                                                            <a target='_blank' href='http://localhost/ecomphp/about.php' style='font-size: 12px;'>Customer Support</a>
+                                                                                            <a target='_blank' href='http://mybasketdev.herokuapp.com/about.php' style='font-size: 12px;'>Customer Support</a>
                                                                                             </p>
                                                                                             </td>
                                                                                         </tr>
