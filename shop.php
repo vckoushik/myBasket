@@ -7,6 +7,14 @@ include 'includes/nav.php';
 		header('location: login.php');
 	}
 ?>
+<script>
+	window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
+</script>
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
