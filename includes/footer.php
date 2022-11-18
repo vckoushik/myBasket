@@ -80,7 +80,7 @@
 	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
 	<!-- waypoints -->
 	<script src="assets/js/waypoints.js"></script>
-	<!-- owl carousel -->
+	<!-- owl carousel -
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<!-- magnific popup -->
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
