@@ -39,13 +39,13 @@
 									</ul>
 								</li>
 								<li><a href="contact.php">Contact</a></li>
-								<li><a href="about.php">About</a></li>
-									<ul class="sub-menu">
+								<li><a href="about.php">About</a>
+									<!-- <ul class="sub-menu">
 										<li><a href="shop.php">Shop</a></li>
 										<li><a href="checkout.html">Check Out</a></li>
 										<li><a href="single-product.html">Single Product</a></li>
 										<li><a href="cart.html">Cart</a></li>
-									</ul>
+									</ul> -->
 								</li>
 								<li>
 									<div class="header-icons">

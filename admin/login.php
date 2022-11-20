@@ -110,7 +110,7 @@ if(isset($_POST) & !empty($_POST)){
 							<div class="row">
 								<div class="form-group">
 									<div class="col-md-12">
-										<a class="pull-right" href="#">(Lost Password?)</a>
+										
 										<label>Password</label>
 										<input type="password" name="password" value="" class="form-control">
 									</div>
@@ -121,7 +121,7 @@ if(isset($_POST) & !empty($_POST)){
 								<div class="col-md-6">
 									<span class="remember-box checkbox">
 									<label for="rememberme">
-									<input type="checkbox" id="rememberme" name="rememberme">Remember Me
+									<input type="checkbox" id="rememberme" name="rememberme">
 									</label>
 									</span>
 								</div>

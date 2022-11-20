@@ -1,8 +1,8 @@
 	<div class="clearfix space70"></div>
 	<!-- FOOTER -->
-	<footer id="footer2">
+	<footer id="footer2 container-fluid">
 		
-		<div class="footer-bottom container">
+		<div class="footer-bottom ">
 			<div class="row">
 				<div class="col-md-6">
 					<p>&copy; Copyright 2022. myBasket</p>

@@ -58,7 +58,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3 col-xs-5 logo">
-				<h2><strong>myBasket </strong><i class="fa fa-shopping-basket" aria-hidden="true"></i></h2>
+				<h2><img style="height: 100px;width:max-content;" src="assets/img/logo1.png" alt=""></h2>
 				</div>
 				<div class="col-md-9 col-xs-7">
 					<div class="top-bar">

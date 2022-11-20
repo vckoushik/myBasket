@@ -47,8 +47,8 @@ if (!isset($_SESSION['email']) & empty($_SESSION['email'])) {
             <div class="box-topic">Total Order</div>
             <div class="number"><?php echo $ord['c'] ?></div>
             <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
+              <!-- <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Up from yesterday</span> -->
             </div>
           </div>
           <i class='bx bx-cart-alt cart'></i>
@@ -56,10 +56,10 @@ if (!isset($_SESSION['email']) & empty($_SESSION['email'])) {
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Total Sales</div>
-            <div class="number">$<?php echo $ord['tot'] ?></div>
+            <div class="number">$<?php echo round($ord['tot']) ?></div>
             <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
+              <!-- <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Up from yesterday</span> -->
             </div>
           </div>
           <i class='bx bxs-cart-add cart two'></i>
@@ -69,8 +69,8 @@ if (!isset($_SESSION['email']) & empty($_SESSION['email'])) {
             <div class="box-topic">Total Products</div>
             <div class="number"><?php echo $prd['c'] ?></div>
             <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
+              <!-- <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Up from yesterday</span> -->
             </div>
           </div>
           <i class='bx bx-box cart three'></i>
@@ -80,7 +80,7 @@ if (!isset($_SESSION['email']) & empty($_SESSION['email'])) {
             <div class="box-topic">Total Customers</div>
             <div class="number"><?php echo $cus['c'] ?></div>
             <div class="indicator">
-              <i class='bx bx-down-arrow-alt down'></i>
+              
               <span class="text"></span>
             </div>
           </div>

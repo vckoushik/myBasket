@@ -11,7 +11,7 @@ include 'inc/header.php';  ?>
 				<div class="row">
 					<div class="page_header text-center">
 						<h2>Shop - Account</h2>
-						<p>Tagline Here</p>
+						<p>Login and Registration Page</p>
 					</div>
 					<div class="col-md-12">
 				<div class="row shop-login">

@@ -135,7 +135,7 @@ require_once 'config/connect.php';
 					
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="<?php echo $r['thumb']; ?>" alt=""></a>
+							<a href="single-product.php?id=<?php echo $r['id']; ?>"><img src="<?php echo $r['thumb']; ?>" alt=""></a>
 						</div>
 						<h3><?php echo $r['name']; ?></h3>
 						<p class="product-price"> $ <?php echo $r['price']; ?> </p>
@@ -174,7 +174,7 @@ require_once 'config/connect.php';
                     <div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
                     <!--Countdown Timer-->
                     <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2023/2/01"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
-                	<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                	<a href="cart-page.php" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>
         </div>

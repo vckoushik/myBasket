@@ -24,12 +24,12 @@ if(isset($_GET['id']) & !empty($_GET['id'])){
 	echo $sql = "INSERT INTO wishlist (pid, uid) VALUES ($pid, $uid)";
 	$res = mysqli_query($connection, $sql);
 	}
-		header('location: wishlist.php');
+		header('location: wishlist-page.php');
 		//echo "redirect to wish list page";
 	
 }
 else{
-	header('location: wishlist.php');
+	header('location: wishlist-page.php');
 }
 
 ?>
