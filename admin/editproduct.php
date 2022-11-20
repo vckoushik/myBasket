@@ -49,8 +49,8 @@ if (isset($_POST) & !empty($_POST)) {
 	} else {
 		$filepath = $_POST['filepath'];
 	}
-
-	$sql = "UPDATE products SET name='$prodname', description='$description', catid='$category', price='$price', thumb='$filepath' WHERE id = $id";
+	$dbloc='admin/'.$filepath;
+	$sql = "UPDATE products SET name='$prodname', description='$description', catid='$category', price='$price', thumb='$dbloc' WHERE id = $id";
 	$res = mysqli_query($connection, $sql);
 	if ($res) {
 		$smsg = "Product Updated";
